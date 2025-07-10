@@ -1,0 +1,195 @@
+/* App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  background: linear-gradient(to right, #e0eafc, #cfdef3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.parking-container {
+  background: #ffffffee;
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 1000px;
+  transition: transform 0.3s ease;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.parking-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.slot-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 10px 0;
+}
+
+.slot {
+  width: 130px;
+  padding: 14px;
+  border-radius: 10px;
+  border: 4px solid #333;
+  font-size: 1rem;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.slot-title {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.status-text {
+  font-size: 0.9rem;
+  margin: 6px 0;
+}
+
+.available {
+  background-color: #b8fcb8;
+  color: #000;
+}
+.taken {
+  background-color: #ff6b6b;
+  color: #fff;
+}
+.reserved {
+  background-color: #ffe066;
+  color: #000;
+}
+
+.road {
+  background-color: #555;
+  color: white;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.reserve-btn {
+  margin-top: 8px;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 6px;
+  background: #ffdd57;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.reserve-btn:hover {
+  background: #fcca3f;
+}
+
+/* Mobile Layout Rotation - Works 100% */
+@media (max-width: 768px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+  }
+
+  .wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vh;
+    height: 100vw;
+    transform: rotate(90deg) translateY(-100%);
+    transform-origin: top left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .parking-container {
+    transform: scale(0.9);
+    transform-origin: center;
+    width: 9000px;
+    max-width: 800px;
+  }
+
+  .slot {
+    width: 100px;
+    padding: 10px;
+  }
+
+  .road {
+    font-size: 0.9rem;
+    padding: 15px;
+    margin: 8px 5px ;
+    width: 70%;
+  }
+}
+
+.loading {
+  margin: 10px auto;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #0077cc;
+  animation: blink 1s linear infinite;
+  text-align: center;
+}
+
+@keyframes blink {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+.reserve-btn[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+  color: #666;
+}
+
+.cancel-btn {
+  margin: 10px auto 20px;
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  background-color: #ddd;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.cancel-btn:hover {
+  background-color: #bbb;
+}
